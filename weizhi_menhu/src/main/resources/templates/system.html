@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <!-- SEO -->
+    <title>为之后台管理系统</title>
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/system.js"></script>
+    <script type="text/javascript" src="../js/jquery-3.2.1.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/system.css">
+    <link rel="stylesheet" type="text/css" href="../css/base.css">
+</head>
+
+<body>
+<header>
+	<ul>
+		<li class="fir"><img src="../images/u341.jpg"></li>
+		<li class="sec">为之工作室后台管理系统</li>
+		<li class="thr"><a href="" style="color: #fff">退出</a></li>
+	</ul>
+</header>
+<article>
+	<div class="left">
+		<ul>
+			<li class="top">首页管理 ></li>
+			<li class="active"><a href="" style="color: #fff;">轮播图</a></li>
+			<li><a href="">为之介绍</a></li>
+			<li><a href="">项目流程</a></li>
+			<li><a href="">项目展示</a></li>
+		</ul>
+	</div>
+
+	<div class="right">
+		<div class="top">
+		<div class="pag">
+		<img class="big" src="../images/1.jpg"  alt="轮播图" id="imgBig">
+	</div>
+		<div class="group">
+		<button id="last" >上移</button>
+		<button id="next" >下移</button>
+		<button onclick="openD()">删除</button>
+
+		<form id="load" method="post" name="head_img" enctype="multipart/form-data" action="http://protal.zhengsj.top/swiper/manage/upload"> 
+		<button id="add" type="submit">添加</button>
+		<input type="file" name="head_img" accept="image/jpg,image/jpeg,image/png,image/bmp" value="" required="required" />
+	</form>			
+	<span>（请添加1000*500的图片）</span>
+	</div>
+</div>
+
+	<div class="box">
+		<button class="Bleft" onclick="leftpage()">&lt;</button>
+		<div class="slide">
+			<div class="page1">
+		<div id="pi1">
+			<img src="" id="i1" onclick="fun(this.id)"/>
+		</div>
+		<div id="pi2">
+			<img src="" id="i2" onclick="fun(this.id)"/>
+		</div>
+		<div id="pi3">
+			<img src="" id="i3" onclick="fun(this.id)"/>
+		</div>
+		<div id="pi4">
+			<img src="" id="i4" onclick="fun(this.id)"/>
+		</div>
+		</div>
+
+		<div class="page2">
+		<div id="pi5">
+			<img src="" id="i5" onclick="fun(this.id)"/>
+		</div>
+		<div id="pi6">
+			<img src="" id="i6" onclick="fun(this.id)"/>
+		</div>
+		<div id="pi7" >
+			<img src="" id="i7" onclick="fun(this.id)"/>
+		</div>
+		<div id="pi8">
+			<img src="" id="i8" onclick="fun(this.id)"/>
+		</div>	
+	</div>
+	</div>
+		<button class="Brigth" onclick="rightpage()">&gt;</button>
+	</div>
+
+		<div id="del">
+			<span class="l-word">删除</span>
+			<span class="close" onclick="closeD()">&times;</span>
+			<div class="line02"></div>
+			<p>您确认删除该图吗?</p>
+
+			<button id="delate">删除</button>
+			<button onclick="closeD()">取消</button>
+		</div>	
+
+
+	</div>
+</article>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <!-- SEO -->
+    <title>为之后台管理系统</title>
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/jquery-3.2.1.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/base.css"> 
+    <link rel="stylesheet" type="text/css" href="../css/manage.css">
+</head>
+
+<body>
+<header>
+	<ul>
+		<li class="fir"><img src="../images/u341.jpg"></li>
+		<li class="sec">为之工作室后台管理系统</li>
+		<li class="thr"><a href="" style="color: #fff">退出</a></li>
+	</ul>
+</header>
+<article>
+	<div class="left">
+		<ul>
+			<li class="top">权限管理 ></li>
+			<li class="active"><a href="" style="color: #fff;">账号管理</a></li>
+			<li><a href="">操作日志</a></li>
+		</ul>
+	</div>
+
+	<div class="right">
+		<ul>
+			<li>后台账号管理</li>
+			<li><button id="plus"  onclick="openP()">新增</button></li>
+		</ul>
+		<div class="line01"></div>
+
+
+			<table border="1" class="user" id="showresult">
+				<colgroup>
+		    		<col span="1" style="width: 30%;">
+		   			<col span="1" style="width: 70%;">
+		  		</colgroup>
+				<tr style="height: 60px;background: #F2F2F2;">
+				    <th>管理员</th>
+				    <th>操作</th>
+				</tr>
+				<tr>
+					<td>sss</td>
+					<td><button id="de" onclick="openD(this)">删除</button> <button id="cha" onclick="openC(this)">修改密码</button></td>
+				</tr>	
+			</table>
+
+
+		<div id="plusWin">
+			<span class="l-word">新增</span>
+			<span class="close" onclick="closeP()">&times;</span>
+			<div class="line02"></div>
+			<div class="row1">
+				<form enctype="multipart/form-data" action="http://protal.zhengsj.top/user/manage/insert" method="post" target="nm_iframe">
+				<span>账号：</span> 
+				<input id="inp1" type="text" name="name" required="required" placeholder="账号为姓名拼音" oninput="checkInput()"/> 
+			</div>
+			<div class="row1">
+				<span>密码：</span>
+				<input id="inp2" type="password" name="password" required="required" placeholder="请设置密码" oninput="checkInput()" /> 
+			</div>
+			<input type="submit" value="确定" id="put1" disabled="true" />
+		</form>
+		</div>
+
+		<div id="del">
+			<span class="l-word">删除</span>
+			<span class="close" onclick="closeD()" id="back">&times;</span>
+			<div class="line02"></div>
+			<p>您确认删除吗?</p>
+			<form enctype="multipart/form-data" action="http://protal.zhengsj.top/user/manage/delete" method="post" target="nm_iframe">
+				<input type="text" id="delName" name="name" value="" class="none">
+				<input type="submit" id="relDel" name="" value="删除">
+			<button onclick="closeD()" id="no" type="button">取消</button>
+			</form>				
+		</div>	
+
+		<div id="change">
+			<span class="l-word">修改密码</span>
+			<span class="close" onclick="closeC()">&times;</span>
+			<div class="line02"></div>
+			<div class="row1">
+				<form enctype="multipart/form-data" action="http://protal.zhengsj.top /user/manage/password" method="post" target="nm_iframe">
+				<span>账号：</span>
+				<input type="text" id="changeName" required="required" name="name" placeholder="" value="" oninput="checkInput2()"> 
+			</div>
+			<div class="row1">
+				<span>密码：</span>
+				<input type="password" id="inp4" name="password" required="required" placeholder="请设置新密码" oninput="checkInput2()"> 
+			</div>
+			<input type="submit" value="确定" id="put2" disabled="true" />
+		</form>
+	</div>
+</div>
+</div>
+</div>
+
+</article>
+	 <iframe id="id_iframe" name="nm_iframe" style="display:none;"></iframe>
+
+</body>
+    <script type="text/javascript" src="../js/manage.js"></script>
+</html>

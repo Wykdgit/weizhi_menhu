@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wizz.demo.dao.HistoryDao">
+    <select id="getMainTitleById" resultType="String" >
+        SELECT main_title FROM wizzHistory WHERE id=#{id}
+    </select>
+    <select id="getBriefIntroById" resultType="String">
+        SELECT brief_intro FROM wizzHistory WHERE id=#{id}
+    </select>
+    <update id="update" >
+        UPDATE wizzHistory SET id=#{id} ,main_title=#{mainTitle},brief_intro=#{briefIntro} WHERE id=#{id}
+    </update>
+    <insert id="addHistory" >
+        INSERT INTO wizzHistory(id,main_title,brief_intro)
+        VALUES(#{id},#{mainTitle},#{briefIntro})
+    </insert>
+    <delete id="deleteHistory">
+        DELETE FROM wizzHistory WHERE id=#{id}
+    </delete>
+    <select id="findAll" resultType="hashMap">
+        SELECT * FROM wizzHistory
+    </select>
+
+</mapper>

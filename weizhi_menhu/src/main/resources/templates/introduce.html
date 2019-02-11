@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <!-- SEO -->
+    <title>为之后台管理系统</title>
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/jquery-3.2.1.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/jquery-3.2.1.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/base.css">
+    <link rel="stylesheet" type="text/css" href="../css/introduce.css">
+</head>
+
+<body>
+<header>
+	<ul>
+		<li class="fir"><img src="../images/u341.jpg"></li>
+		<li class="sec">为之工作室后台管理系统</li>
+		<li class="thr"><a href="" style="color: #fff">退出</a></li>
+	</ul>
+</header>
+
+<article>
+	<div class="left" style="width: 20%;margin-left: 6%;">
+		<ul>
+			<li class="top">首页管理 ></li>
+			<li><a href="">轮播图</a></li>
+			<li class="active"><a href="" style="color: #fff;">为之介绍</a></li>
+			<li><a href="../html/flow.html">项目流程</a></li>
+			<li><a href="">项目展示</a></li>
+		</ul>
+	</div>
+
+	<div class="right">
+		<ul>
+			<li class="now" id="go1">模块一</li>
+			<li id="go2"><a>模块二</a></li>
+			<li id="go3">模块三</li>
+			<li id="go4">模块四</li>
+			<li id="go5">模块五</li>
+			<li id="go6">模块六</li>
+		</ul>
+		<div class="line01"></div>	
+	<form id="apply-for-help" action="http://protal.zhengsj.top/introduce/update/1" enctype="multipart/form-data" method="post" target="nm_iframe">
+		<input type="hidden" id="shift" name="id" value="1"/>
+		<div class="row01">
+			<span class="lip">模块主题：</span> 
+			<textarea id="inp11" type="text" name="theme" placeholder="" required="required" disabled="true" maxlength="10"></textarea>
+		</div>
+		<div class="row02">
+			<span class="lip">模块简介：</span> 
+			<textarea  id="inp12" type="text" name="content" maxlength="75"  placeholder="     简介不超过75个字" required="required" disabled="true"></textarea>
+		</div>		
+		<div class="row03">
+			<span class="lip">模块详情：</span> 
+			<div id="img3">
+				<img src="" id="show">
+			</div>
+					<input id="inp13" type="file" onchange="changepic(this)" name="file" accept="image/jpg,image/jpeg,image/png,image/bmp" value="" required="required" disabled="true"/>
+
+			<p class="upload">（请上传1000*400的图片）</p>	
+		</div>
+		<div class="charge">
+		<button id="change" type="button">修改</button>
+		<input type="submit" value="提交" id="revise" disabled="true"/>
+	</div>	
+	</form>
+	 <iframe id="id_iframe" name="nm_iframe" style="display:none;"></iframe>    
+</div>
+</div>
+</article>
+</body>
+    <script type="text/javascript" src="../js/introduce.js"></script>
+</html>
